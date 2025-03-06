@@ -32,7 +32,11 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="pro-style.css"> <!-- Your custom CSS file -->
-	
+		<style>
+			.wordbold {
+				font-weight: bold;
+			}
+		</style>
 		<!-- JavaScript -->
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 	
@@ -68,37 +72,56 @@
 				"url": "https://digitoolhub.github.io/ai-agent-for-shopify-ecommerce-website-voice-agent.html"
 			}
 		</script>
-		<title>Digi Tool Hub - AI Agent for Shopify E-commerce Websites</title>
+		<title>Free Online Words Counter Tool - Digi Tool Hub</title>
 	</head>
 	<body>
 		<!-- Navbar Section Start-->
 		<div class="bg-light nav-bgs sticky-top" id="navbar-container-page"></div>
 		<!-- Navbar Section End-->
 		<div class="container wrap">
-			<div class="row">
-				<article class="col-sm-8 single-post">
-					<div class="post-body">
-						<h1 class="bd-title" id="content">10 Best WordPress Blog Themes of 2024: Find Your Perfect Fit!</h1>
-						<div class="post-body">
-							<figure class="figure">
-								<img src="https://digitoolhub.github.io/Images/11-Best-FREE-AI-TOOLS-For-WordPress-Website-Designers-&-Developers.jpg" class="figure-img img-fluid rounded" alt="11 Best FREE AI TOOLS For WordPress Website Designers & Developers">
-								<figcaption class="figure-caption text-center">11 Best FREE AI TOOLS For WordPress Website Designers & Developers</figcaption>
-							</figure>
-							<div class="text-justify postimg">
-                                
-                                <span id="relatedpost-container-page" class="my-3 pt-3" width="100%" height="100%"></span>
+			<div class="row pb-3">
+				<article class="col-sm-12 single-post">
+					<h1 class="bd-title text-center py-4" id="content">Free Online Words Counter Tool</h1>
+						<div class="post-body pt-3">
+							<div class=" row text-justify postimg">
+                                <div class="col-md-8">
+									<p>Total: <span id="wordCountParagraph" class="wordbold">0</span> Words, and <span id="charCountParagraph" class="wordbold">0</span> Characters.</p>
+									<textarea id="textInput" class="form-control" rows="13" placeholder="Type your text here..."></textarea>
+								</div>
+								<div class="col-md-4">
+									<h4 class="mb-3">Statistics</h4>
+									<ul class="list-group">
+										<li class="list-group-item">Words: <span id="wordCount">0</span></li>
+										<li class="list-group-item">Characters: <span id="charCount">0</span></li>
+										<li class="list-group-item">Lines: <span id="lineCount">0</span></li>
+									</ul>
+								</div>
 							</div>
+							<!--div class="row">
+								<article class="col-sm-8 single-post">
+									<div class="post-body">
+										<div class="post-body">
+											<figure class="figure">
+												<img src="https://digitoolhub.github.io/Images/free-online-words-counter-tool.jpg" class="figure-img img-fluid rounded" alt="Free Online Words Counter Tool">
+												<figcaption class="figure-caption text-center">Free Online Words Counter Tool</figcaption>
+											</figure>
+											<div class="text-justify postimg">
+												
+												<span id="relatedpost-container-page" class="my-3 pt-3" width="100%" height="100%"></span>
+											</div>
+										</div>
+									</div>
+								</article>
+								<aside id="sidebar-container-page" class="bd-sidebar col-sm-4 text-center"></aside>
+							</div-->
 						</div>
-					</div>
 				</article>
-				<aside id="sidebar-container-page" class="bd-sidebar col-sm-4 text-center"></aside>
 			</div>
 		</div>
         
         <!-- Footer Section -->
-		<footer class="bg-dark text-light py-4">
+         <footer class="bg-dark text-light py-4">
 			<div id="footer-container"></div>
-			<div id="own-credit-footer-container"></div>
 			<div id="credit-footer-container"></div>
 		</footer>
         <script>
@@ -138,23 +161,16 @@
                     .then(data => {
                         document.getElementById("footer-container").innerHTML = data;
                     })
-					.catch(error => console.error("Error loading the footer:", error));
-				
-				fetch("own-credit-footer.html")
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById("own-credit-footer-container").innerHTML = data;
-                    })
                     .catch(error => console.error("Error loading the footer:", error));
-
-				fetch("credit-footer.html")
+                
+                fetch("credit-footer.html")
                     .then(response => response.text())
                     .then(data => {
                         document.getElementById("credit-footer-container").innerHTML = data;
                     })
                     .catch(error => console.error("Error loading the footer:", error));
             });
-		</script>
+        </script>
         <!-- End of Footer Section -->
         <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">Top</button>
 
@@ -163,5 +179,19 @@
 
         <!-- JavaScript -->
         <script src="myscripts.js"></script>
+		
+		<!--Tool Script-->
+		<script>
+			document.getElementById("textInput").addEventListener("input", function () {
+				let text = this.value.trim();
+				let words = text.split(/\s+/).filter(Boolean).length;
+				document.getElementById("wordCount").textContent = words;
+				document.getElementById("wordCountParagraph").textContent = words;
+				document.getElementById("charCount").textContent = text.length;
+				document.getElementById("charCountParagraph").textContent = text.length;
+				let lines = text.split(/\n+/).filter(Boolean).length;
+				document.getElementById("lineCount").textContent = lines;
+			});
+		</script>
 	</body>
 </html>

@@ -203,7 +203,12 @@
         </section>
         <!-- Latest Posts Section End -->        
 
-        <!-- Footer Section -->
+                <!-- Footer Section -->
+		<footer class="bg-dark text-light py-4">
+			<div id="footer-container"></div>
+			<div id="own-credit-footer-container"></div>
+		</footer>
+        
         <script>
             // Function to load navbar and footer
             document.addEventListener("DOMContentLoaded", function () {
@@ -241,10 +246,23 @@
                     .then(data => {
                         document.getElementById("footer-container").innerHTML = data;
                     })
+					.catch(error => console.error("Error loading the footer:", error));
+				
+				fetch("own-credit-footer.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("own-credit-footer-container").innerHTML = data;
+                    })
+                    .catch(error => console.error("Error loading the footer:", error));
+
+				fetch("credit-footer.html")
+                    .then(response => response.text())
+                    .then(data => {
+                        document.getElementById("credit-footer-container").innerHTML = data;
+                    })
                     .catch(error => console.error("Error loading the footer:", error));
             });
-        </script>
-        <div id="footer-container"></div>
+		</script>
         <!-- End of Footer Section -->   
         
         <!-- Scroll to Top Button -->

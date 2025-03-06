@@ -85,10 +85,12 @@
 				<aside id="sidebar-container-page" class="bd-sidebar col-sm-4 text-center"></aside>
 			</div>
 		</div>		
-		<!-- Footer Section-->
-		<footer class="footer" id="footer-container">
+		<!-- Footer Section -->
+		<footer class="bg-dark text-light py-4">
+			<div id="footer-container"></div>
+			<div id="own-credit-footer-container"></div>
 		</footer>
-		<!-- End of Footer Section -->
+		
 		<script>
 			// Function to load navbar and footer
 			document.addEventListener("DOMContentLoaded", function () {
@@ -127,8 +129,23 @@
 						document.getElementById("footer-container").innerHTML = data;
 					})
 					.catch(error => console.error("Error loading the footer:", error));
+				
+				fetch("own-credit-footer.html")
+					.then(response => response.text())
+					.then(data => {
+						document.getElementById("own-credit-footer-container").innerHTML = data;
+					})
+					.catch(error => console.error("Error loading the footer:", error));
+
+				fetch("credit-footer.html")
+					.then(response => response.text())
+					.then(data => {
+						document.getElementById("credit-footer-container").innerHTML = data;
+					})
+					.catch(error => console.error("Error loading the footer:", error));
 			});
 		</script>
+		<!-- End of Footer Section -->
         <!-- Scroll to Top Button -->
         <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">Top</button>
 
