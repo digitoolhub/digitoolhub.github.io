@@ -132,6 +132,9 @@ padding: 15px 10px;
     justify-content: space-between;
     align-items: center;
 }
+/*-------------------------------------------------------
+                    Slider Css Start
+-------------------------------------------------------- */
 .carousel-item {
     position: relative;
     overflow: hidden;
@@ -147,7 +150,38 @@ padding: 15px 10px;
 .carousel-item.active img {
     transform: scale(1.1);
 }
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.6); /* Black background with transparency */
+    padding: 20px;
+    border-radius: 10px;
+    bottom: 35%; /* Position the caption at the bottom */
+}
+.carousel-caption h5 {
+    color: #ffffff; /* White text color */
+    margin-bottom: 10px;
+}
 
+.carousel-caption p {
+    color: #ffffff; /* White text color */
+    margin-bottom: 10px;
+}
+
+.carousel-caption a.btn {
+    color: #ffffff; /* White text color for button */
+    background-color: #007bff; /* Blue button background */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add some padding */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline */
+}
+
+.carousel-caption a.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    color: #ffffff; /* Ensure text color stays white */
+}
+/*-------------------------------------------------------
+                    Slider Css End
+-------------------------------------------------------- */
 .card-img {
     padding: 10% 0 1% 0;
 }
