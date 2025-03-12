@@ -336,6 +336,16 @@ figcaption {
     font-size: 20px;
     padding: 10px 0;
 }
+.blockquote {
+    background: #e7e7e7;
+    padding: 10px 15px 10px 45px;
+    border-radius: 5px;
+}
+.bg-relpost {
+    padding: 2% 2%;
+    background: #e3e3e3;
+    border-radius: 5px;
+}
 ul li {
     font-size: 20px;
     margin: 5px 0;
