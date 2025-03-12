@@ -336,6 +336,12 @@ figcaption {
     font-size: 20px;
     padding: 10px 0;
 }
+.blog-heading span {
+    border-bottom: 5px solid #0d6efd;
+}
+.latest-post-item h5, .latest-post-item p {
+    text-align: justify;
+}
 .blockquote {
     background: #e7e7e7;
     padding: 10px 15px 10px 45px;
