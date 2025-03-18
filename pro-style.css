@@ -336,6 +336,9 @@ figcaption {
     font-size: 20px;
     padding: 10px 0;
 }
+.post-body ul li h3, .post-body ol li h3 {
+    padding: 0;
+}
 .blog-heading span {
     border-bottom: 5px solid #0d6efd;
 }
